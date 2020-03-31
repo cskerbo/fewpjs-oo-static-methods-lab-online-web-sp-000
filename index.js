@@ -16,3 +16,4 @@ class Formatter {
   })
 console.log(newString)
 }
+}
