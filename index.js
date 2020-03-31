@@ -11,8 +11,8 @@ class Formatter {
     let wordArray = string.split(' ')
     let newString = wordArray.forEach(word => {
       if (word != 'the' || 'a' || 'an' || 'but' || 'of' || 'and' || 'from') {
-          word.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });)
+          word.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
         }
-  }
+  })
 console.log(newString)
 }
