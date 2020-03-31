@@ -8,6 +8,8 @@ class Formatter {
   }
 
   static titleize(string) {
+    let wordArray = string.split(' ')
+    console.log(wordArray)
     return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
   }
 
