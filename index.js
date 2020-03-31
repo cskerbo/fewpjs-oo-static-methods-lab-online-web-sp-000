@@ -9,8 +9,10 @@ class Formatter {
 
   static titleize(string) {
     let wordArray = string.split(' ')
-    console.log(wordArray)
-    return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+    let newString = wordArray.forEach(word => {
+      if (word != 'the' || 'a' || 'an' || 'but' || 'of' || 'and' || 'from') {
+          word.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });)
+        }
   }
-
+console.log(newString)
 }
