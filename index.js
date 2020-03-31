@@ -7,13 +7,20 @@ class Formatter {
     return string.replace(/[^A-Za-z0-9-' ]+/g, '');
   }
 
-  static titleize(string) {
-    let wordArray = string.split(' ')
-    let newString = wordArray.forEach(word => {
-      if (word != 'the' || 'a' || 'an' || 'but' || 'of' || 'and' || 'from') {
-          return word.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
-        }
-  })
-console.log(newString)
-}
+  static titleize(string){
+    let newString = ""
+    let noTitle = ["the", "from", "at", "by", "a", "an", "but", "of", "and", "for"]
+    let title = string.split(" ")
+
+    title.forEach(word => {
+      if (title.indexOf(word) === 0){
+        newString += word.charAt(0).toUpperCase() + word.slice(1)
+      }else if (noTitle.includes(word)){
+        newString += ` ${word}`
+      }else{
+        newString += ` ${word.charAt(0).toUpperCase() + word.slice(1)}`
+      }
+    })
+    return newString
+  }
 }
